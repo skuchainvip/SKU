@@ -1,0 +1,66 @@
+package Skuchain.Core;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Skuchain-Curiosity Core'}
+{$LIBSUFFIX '250'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dbrtl,
+  inet,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  xmlrtl,
+  dsnap,
+  Skuchain.Utils;
+
+contains
+  Skuchain.Core.Application in '..\..\Source\Skuchain.Core.Application.pas',
+  Skuchain.Core.Attributes in '..\..\Source\Skuchain.Core.Attributes.pas',
+  Skuchain.Core.Cache in '..\..\Source\Skuchain.Core.Cache.pas',
+  Skuchain.Core.Classes in '..\..\Source\Skuchain.Core.Classes.pas',
+  Skuchain.Core.Engine in '..\..\Source\Skuchain.Core.Engine.pas',
+  Skuchain.Core.MessageBodyReader in '..\..\Source\Skuchain.Core.MessageBodyReader.pas',
+  Skuchain.Core.MessageBodyWriter in '..\..\Source\Skuchain.Core.MessageBodyWriter.pas',
+  Skuchain.Core.Registry in '..\..\Source\Skuchain.Core.Registry.pas',
+  Skuchain.Core.Response in '..\..\Source\Skuchain.Core.Response.pas',
+  Skuchain.Core.Token in '..\..\Source\Skuchain.Core.Token.pas',
+  Skuchain.http.Core in '..\..\Source\Skuchain.http.Core.pas',
+  Skuchain.Core.Activation in '..\..\Source\Skuchain.Core.Activation.pas',
+  Skuchain.Core.Injection.Interfaces in '..\..\Source\Skuchain.Core.Injection.Interfaces.pas',
+  Skuchain.Core.Injection in '..\..\Source\Skuchain.Core.Injection.pas',
+  Skuchain.Core.Injection.Types in '..\..\Source\Skuchain.Core.Injection.Types.pas',
+  Skuchain.Core.Activation.InjectionService in '..\..\Source\Skuchain.Core.Activation.InjectionService.pas',
+  Skuchain.Core.Activation.Interfaces in '..\..\Source\Skuchain.Core.Activation.Interfaces.pas';
+
+end.
+
+
+

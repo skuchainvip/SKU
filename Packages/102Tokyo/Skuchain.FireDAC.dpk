@@ -1,0 +1,59 @@
+package Skuchain.FireDAC;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Skuchain-Curiosity FireDAC'}
+{$LIBSUFFIX '250'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dbrtl,
+  FireDAC, // if you get a compilation error here, probably your Delphi edition does not include FireDAC, skip this whole package
+  FireDACCommonDriver,
+  FireDACCommon,
+  inet,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  dsnap,
+  Skuchain.Core,
+  Skuchain.ReadersAndWriters;
+
+contains
+  Skuchain.Data.FireDAC.DataModule in '..\..\Source\Skuchain.Data.FireDAC.DataModule.pas' {SkuchainFDDataModuleResource: TDataModule},
+  Skuchain.Data.FireDAC.ReadersAndWriters in '..\..\Source\Skuchain.Data.FireDAC.ReadersAndWriters.pas',
+  Skuchain.Data.FireDAC in '..\..\Source\Skuchain.Data.FireDAC.pas',
+  Skuchain.Data.FireDAC.InjectionService in '..\..\Source\Skuchain.Data.FireDAC.InjectionService.pas',
+  Skuchain.Data.FireDAC.Resources in '..\..\Source\Skuchain.Data.FireDAC.Resources.pas',
+  Skuchain.Data.FireDAC.Utils in '..\..\Source\Skuchain.Data.FireDAC.Utils.pas';
+
+end.
+
+
+
+
