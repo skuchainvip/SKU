@@ -1,0 +1,59 @@
+package SkuchainClient.Core;
+
+{$R *.res}
+{$R '*.dres'}
+{$R *.dres}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Skuchain-Curiosity Client Core'}
+{$LIBSUFFIX '150'}
+{$DESIGNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  dbrtl,
+  inet,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  Skuchain.Utils;
+
+contains
+  Skuchain.Client.Application in '..\..\Source\Skuchain.Client.Application.pas',
+  Skuchain.Client.Client in '..\..\Source\Skuchain.Client.Client.pas',
+  Skuchain.Client.CustomResource.Editor in '..\..\Source\Skuchain.Client.CustomResource.Editor.pas',
+  Skuchain.Client.CustomResource in '..\..\Source\Skuchain.Client.CustomResource.pas',
+  Skuchain.Client.Messaging.Resource in '..\..\Source\Skuchain.Client.Messaging.Resource.pas',
+  Skuchain.Client.Resource.JSON in '..\..\Source\Skuchain.Client.Resource.JSON.pas',
+  Skuchain.Client.Resource in '..\..\Source\Skuchain.Client.Resource.pas',
+  Skuchain.Client.Resource.Stream in '..\..\Source\Skuchain.Client.Resource.Stream.pas',
+  Skuchain.Client.SubResource.JSON in '..\..\Source\Skuchain.Client.SubResource.JSON.pas',
+  Skuchain.Client.SubResource in '..\..\Source\Skuchain.Client.SubResource.pas',
+  Skuchain.Client.SubResource.Stream in '..\..\Source\Skuchain.Client.SubResource.Stream.pas',
+  Skuchain.Client.Token in '..\..\Source\Skuchain.Client.Token.pas',
+  Skuchain.Client.Utils in '..\..\Source\Skuchain.Client.Utils.pas';
+
+end.
+
+
+
