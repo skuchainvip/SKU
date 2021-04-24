@@ -1,4 +1,4 @@
-![SKU logo](http://www.skuchain.vip/cn/images/logo400.png)
+![SKU logo](https://avatars.githubusercontent.com/u/38019049?v=4)
 
 
 # SKU
