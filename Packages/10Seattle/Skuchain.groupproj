@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{D910EC17-6166-41C1-AECE-22D9F3443464}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="SkuchainServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SkuchainClient.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="SkuchainServer">
+        <MSBuild Projects="SkuchainServer.dproj"/>
+    </Target>
+    <Target Name="SkuchainServer:Clean">
+        <MSBuild Projects="SkuchainServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SkuchainServer:Make">
+        <MSBuild Projects="SkuchainServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SkuchainClient">
+        <MSBuild Projects="SkuchainClient.dproj"/>
+    </Target>
+    <Target Name="SkuchainClient:Clean">
+        <MSBuild Projects="SkuchainClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SkuchainClient:Make">
+        <MSBuild Projects="SkuchainClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="SkuchainServer;SkuchainClient"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="SkuchainServer:Clean;SkuchainClient:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="SkuchainServer:Make;SkuchainClient:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
