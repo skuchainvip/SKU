@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{79526BDC-090B-468F-A29A-B97CAFE42EA6}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Skuchain.Utils.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Skuchain.JOSE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Skuchain.Core.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Skuchain.ReadersAndWriters.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Skuchain.FireDAC.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Skuchain_Utils">
+        <MSBuild Projects="Skuchain.Utils.dproj"/>
+    </Target>
+    <Target Name="Skuchain_Utils:Clean">
+        <MSBuild Projects="Skuchain.Utils.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Skuchain_Utils:Make">
+        <MSBuild Projects="Skuchain.Utils.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Skuchain_JOSE">
+        <MSBuild Projects="Skuchain.JOSE.dproj"/>
+    </Target>
+    <Target Name="Skuchain_JOSE:Clean">
+        <MSBuild Projects="Skuchain.JOSE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Skuchain_JOSE:Make">
+        <MSBuild Projects="Skuchain.JOSE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Skuchain_Core">
+        <MSBuild Projects="Skuchain.Core.dproj"/>
+    </Target>
+    <Target Name="Skuchain_Core:Clean">
+        <MSBuild Projects="Skuchain.Core.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Skuchain_Core:Make">
+        <MSBuild Projects="Skuchain.Core.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Skuchain_ReadersAndWriters">
+        <MSBuild Projects="Skuchain.ReadersAndWriters.dproj"/>
+    </Target>
+    <Target Name="Skuchain_ReadersAndWriters:Clean">
+        <MSBuild Projects="Skuchain.ReadersAndWriters.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Skuchain_ReadersAndWriters:Make">
+        <MSBuild Projects="Skuchain.ReadersAndWriters.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Skuchain_FireDAC">
+        <MSBuild Projects="Skuchain.FireDAC.dproj"/>
+    </Target>
+    <Target Name="Skuchain_FireDAC:Clean">
+        <MSBuild Projects="Skuchain.FireDAC.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Skuchain_FireDAC:Make">
+        <MSBuild Projects="Skuchain.FireDAC.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Skuchain_Utils;Skuchain_JOSE;Skuchain_Core;Skuchain_ReadersAndWriters;Skuchain_FireDAC"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Skuchain_Utils:Clean;Skuchain_JOSE:Clean;Skuchain_Core:Clean;Skuchain_ReadersAndWriters:Clean;Skuchain_FireDAC:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Skuchain_Utils:Make;Skuchain_JOSE:Make;Skuchain_Core:Make;Skuchain_ReadersAndWriters:Make;Skuchain_FireDAC:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
