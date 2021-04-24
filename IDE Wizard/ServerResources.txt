@@ -1,0 +1,36 @@
+unit ServerResources;
+
+interface
+
+uses
+  SysUtils, Classes
+
+  , Skuchain.Core.Attributes
+  , Skuchain.Core.MediaType
+;
+
+type
+  [Path('helloworld')]
+  THelloWorldResource = class
+  public
+    [GET, Produces(TMediaType.TEXT_PLAIN)]
+    function SayHelloWorld: string;
+  end;
+
+implementation
+
+uses
+  Skuchain.Core.Registry
+;
+
+{ THelloWorldResource }
+
+function THelloWorldResource.SayHelloWorld: string;
+begin
+  Result := 'Hello World!';
+end;
+
+initialization
+  TSkuchainResourceRegistry.Instance.RegisterResource<THelloWorldResource>;
+
+end.
